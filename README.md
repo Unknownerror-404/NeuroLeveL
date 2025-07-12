@@ -5,3 +5,6 @@ NeuroLeveL is a lightweight framework for adaptive XP handling in Discord bots. 
 - Leveling system with scaling
 - Leaderboard support
 - MongoDB integration
+- Dependent on user activity and participation relative to server activity.
+- Encourages silent warriores while inherently discouraging spamming.
+- Inbuilt spam control.
