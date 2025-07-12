@@ -1,0 +1,17 @@
+{
+  "name": "neurolevel",
+  "version": "1.0.0",
+  "description": "Adaptive XP handler for Discord bots based on activity and message contribution.",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "keywords": ["discord", "bot", "xp", "leveling", "mongodb", "adaptive", "perceptron-analogous"],
+  "author": "Aniket S. Kuyate",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.19.3",
+    "mongoose": "^8.16.1",
+    "dotenv": "^16.5.0"
+  }
+}
