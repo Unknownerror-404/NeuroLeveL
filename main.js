@@ -39,7 +39,7 @@ async function connectTODatabase() {
             return files;
         } //Get all command files recursively.
 
-        const commandFiles = getAllCommandFiles(path.join(__dirname, 'commands'));
+        const commandFiles = getAllCommandFiles(path.join(__dirname, 'NeuroLeveL'));
         for (const file of commandFiles) {
             const command = require(file);
             client.commands.set(command.name, command);
