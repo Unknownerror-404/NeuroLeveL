@@ -12,7 +12,7 @@ Originally extracted from its parent bot **Jason**, this open-source module is n
 - Leaderboard support
 - MongoDB integration
 - Dependent on user activity and participation relative to server activity.
-- Encourages silent warriores while inherently discouraging spamming.
+- Encourages silent warriors while inherently discouraging spamming.
 - Inbuilt spam control.
 
 ### Use Cases:
