@@ -20,3 +20,5 @@ Perfect for Discord communities that want:
 - Fairer engagement systems
 - Anti-spam leveling
 - Smarter reward logic based on real interaction
+
+### Updates underway!!
