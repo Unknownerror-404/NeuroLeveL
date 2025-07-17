@@ -23,7 +23,7 @@ Perfect for Discord communities that want:
 
 ### Updates underway!! Working on v 1.01
 __To do__:
-- Make the code more dynamic to mirror weight updatation in perceptron.
+- Make the code more dynamic to mirror updating weights in a perceptron.
 - Adding XP caps.
 - Addition of optimizers like ADAM .
 - Pull out the ports for tuning weights and biases to the discord chat region itself, rather than implicit tuning in the handler code.
