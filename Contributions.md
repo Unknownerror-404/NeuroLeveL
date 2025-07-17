@@ -10,4 +10,4 @@ Thank you for your interest in improving **NeuroLeveL**! Whether you're fixing b
 2. **Clone** it to your local machine:
 
 ```bash
-git clone https://github.com/Unknownerror-404/NeuroLeveL/tree/Contributions
+git clone https://github.com/Unknownerror-404/NeuroLeveL/tree/main
