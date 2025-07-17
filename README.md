@@ -26,5 +26,6 @@ __To do__:
 - Make the code more dynamic to mirror weight updatation in perceptron.
 - Adding XP caps.
 - Addition of optimizers like ADAM .
-- Pull out ports to weights and biases to the discord chat in itself rather than the implicit ones in the code.
+- Pull out the ports for tuning weights and biases to the discord chat region itself, rather than implicit tuning in the handler code.
 - Optimization of database updates, making sequential processing more efficient by implementing batch or parallel processing updates.
+---
