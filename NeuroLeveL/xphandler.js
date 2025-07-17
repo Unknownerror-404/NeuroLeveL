@@ -21,7 +21,8 @@ class XPHandler {
         this.cooldown = new Set();
         this.basexp = 10; //Setting base value.
         this.scaling = 1.15; //Setting scaling factor.
-        this.perceptronWeight = { activity: 0.7, userFactor: 0.3 }; //Setting weights to fractions, change encouraged.
+        this.perceptronWeight = { activity: 0.5, userFactor: 0.5 }; //Setting weights to fractions, change encouraged.
+        this.adjustedweights = { activity: 0.5, userFactor: 0.5 };
         setInterval(() => this.cleanup(), 15 * 60 * 1000); // Cleanup every 15 minutes.
         setInterval(() => {
             globalmsg.count = 0;
@@ -42,14 +43,33 @@ class XPHandler {
         return user;
     } // Getting user info from temporary cache.
 
+    sigmoid(x, k, center) {
+    return 1 / (1 + Math.exp(-k * (x - center)));
+    }//Activation function
+
+    update_weights(perceptronWeight, msgC, userC){
+        const baseActivity = perceptronWeight.activity;
+        const baseUserFactor = perceptronWeight.userFactor;
+
+        const msgs = this.sigmoid(msgC, 0.05, 1000);
+        const users = this.sigmoid(userC, 0.01, 200);
+
+        perceptronWeight.activity = baseActivity * msgs;
+        perceptronWeight.userFactor = baseUserFactor * users;
+
+        return perceptronWeight;
+    }//Dynamic weight updation, base values set to 0.5 change if needed.
+
     calculateXP(msgCount, userMsgRatio) {
         const normalizeActivity = 1 / (msgCount + 1);
         const normalizeUserRatio = userMsgRatio;
         const bias = 1.0;
+        this.adjustedweights = this.update_weights(this.perceptronWeight, msgCount, userMsgRatio);
         const gainMultiplier = (
-            (normalizeActivity * this.perceptronWeight.activity + normalizeUserRatio * this.perceptronWeight.userFactor) + bias
+            (normalizeActivity * this.adjustedweights.activity + normalizeUserRatio * this.adjustedweights.userFactor) + bias
         );
-        const xp = this.basexp * gainMultiplier;
+        const activation = Math.max(3 , gainMultiplier); //Relu lie and also clamps at bse value 3 for safeguarding against 0 xp for worst cases.
+        const xp = this.basexp * activation;
         return Math.max(1, Math.floor(xp));
     } //Calculating XP based on message count and user ratio.
 
@@ -132,6 +152,7 @@ class XPHandler {
         return { id: userID, xp: user.xp, level: user.level, gained: xpGain, leveledUp }; //Update user levels if applicable.
     }
 }
+
 const XP = new XPHandler();
 module.exports = {
     XP,
