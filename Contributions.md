@@ -10,4 +10,4 @@ Thank you for your interest in improving **NeuroLeveL**! Whether you're fixing b
 2. **Clone** it to your local machine:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/NeuroLeveL.git
+git clone https://github.com/*placeholder*/NeuroLeveL.git
