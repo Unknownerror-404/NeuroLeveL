@@ -22,7 +22,7 @@ Perfect for Discord communities that want:
 - Smarter reward logic based on real interaction
 
 ### Updates underway!! Working on v 1.01
-*To do*:
+__To do__:
 - Make the code more dynamic to mirror an actual perceptron.
 - Addition of XP caps.
 - Addition of ADAM-analogous optimizers.
