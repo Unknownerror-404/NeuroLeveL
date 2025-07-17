@@ -10,4 +10,4 @@
 ---
 
 ## Under Work 🛠️ :
-- Addind delta weights and baises to the original weights and biases, making them more like a perceptron.
+- Adding delta weights and baises to the original weights and biases, making them more like a perceptron.
