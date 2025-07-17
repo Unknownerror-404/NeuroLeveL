@@ -23,8 +23,8 @@ Perfect for Discord communities that want:
 
 ### Updates underway!! Working on v 1.01
 __To do__:
-- Make the code more dynamic to mirror an actual perceptron.
-- Addition of XP caps.
-- Addition of ADAM-analogous optimizers.
+- Make the code more dynamic to mirror weight updatation in perceptron.
+- Adding XP caps.
+- Addition of optimizers like ADAM .
 - Pull out ports to weights and biases to the discord chat in itself rather than the implicit ones in the code.
 - Optimization of database updates, making sequential processing more efficient by implementing batch or parallel processing updates.
