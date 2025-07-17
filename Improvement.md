@@ -6,3 +6,8 @@
 - Addition of ADAM-analogous optimizers.
 - Freindly Debug logs.
 - Add xp specific environment.
+
+---
+
+## Under Work 🛠️ :
+- Addind delta weights and baises to the original weights and biases, making them more like a perceptron.
