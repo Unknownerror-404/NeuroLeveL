@@ -1,6 +1,6 @@
 # 🤖 Contribution Guide for NeuroLeveL
 
-Thank you for your interest in improving **NeuroLeveL**! Whether you're fixing bugs, refining XP logic, or adding features, your help is valued.
+Thank you for your interest in improving **NeuroLeveL**! Whether you're fixing bugs, refining the XP logic, or adding features, your help is truly valued.
 
 ---
 
