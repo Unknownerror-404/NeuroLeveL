@@ -152,6 +152,7 @@ class XPHandler {
         return { id: userID, xp: user.xp, level: user.level, gained: xpGain, leveledUp }; //Update user levels if applicable.
     }
 }
+
 const XP = new XPHandler();
 module.exports = {
     XP,
