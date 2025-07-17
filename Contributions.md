@@ -11,3 +11,5 @@ Thank you for your interest in improving **NeuroLeveL**! Whether you're fixing b
 
 ```bash
 git clone https://github.com/Unknownerror-404/NeuroLeveL
+---
+"Warning" : ⚠️ Make sure you're cloning your fork, not the original repo directly.
