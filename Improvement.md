@@ -5,3 +5,4 @@
 - Pull out portd to weights and biases to the discord chat in itself rather than the implicit ones in the code.
 - Addition of ADAM-analogous optimizers.
 - Freindly Debug logs.
+- Add xp specific environment.
