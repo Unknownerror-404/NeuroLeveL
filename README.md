@@ -23,7 +23,7 @@ Perfect for Discord communities that want:
 
 ### Updates underway!! Working on v 1.01
 *To do*:
-- Make the pereceptron like code more like an actual perceptron.
+- Make the code more dynamic to mirror an actual perceptron.
 - Addition of XP caps.
 - Addition of ADAM-analogous optimizers.
 - Pull out ports to weights and biases to the discord chat in itself rather than the implicit ones in the code.
