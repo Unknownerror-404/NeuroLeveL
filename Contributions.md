@@ -13,7 +13,7 @@ Thank you for your interest in improving **NeuroLeveL**! Whether you're fixing b
 git clone https://github.com/Unknownerror-404/NeuroLeveL
 ```
 Warning : ⚠️ Make sure you're cloning your fork, not the original repo directly.
-## Step 2: Know What Needs Work
+## Step 2: Know What Needs Work ##
 *Open the improvements.md file it’s your cheat code to all planned enhancements and open areas to contribute. Pick something you're excited about!*
 ---
 ## 📦 Step 3: Install Dependencies
