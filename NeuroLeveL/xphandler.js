@@ -47,7 +47,7 @@ class XPHandler {
     return 1 / (1 + Math.exp(-k * (x - center)));
     }//Activation function
 
-    update_weights(perceptronWeight, msgC, userC){
+    async update_weights(perceptronWeight, msgC, userC){
         const baseActivity = perceptronWeight.activity;
         const baseUserFactor = perceptronWeight.userFactor;
 
@@ -68,7 +68,7 @@ class XPHandler {
         const gainMultiplier = (
             (normalizeActivity * this.adjustedweights.activity + normalizeUserRatio * this.adjustedweights.userFactor) + bias
         );
-        const activation = Math.max(3 , gainMultiplier); //Relu lie and also clamps at bse value 3 for safeguarding against 0 xp for worst cases.
+        const activation = Math.max(3 , gainMultiplier); //Relu like and also clamps at base value 3 for safeguarding against 0 xp for worst cases.
         const xp = this.basexp * activation;
         return Math.max(1, Math.floor(xp));
     } //Calculating XP based on message count and user ratio.
@@ -77,8 +77,13 @@ class XPHandler {
         return Math.floor(Math.pow(xp / 100, 1 / this.scaling));
     } // Extract levels from XP.
 
-    getXPForNextLevel(level) {
-        return Math.floor(100 * Math.pow(level + 1, this.scaling));
+    getXPForNextLevel(level, adjustedweights, msgFreq, activeUsers, gainMultiplier) {
+        const w1 = gainMultiplier;
+        const w2 = adjustedweights.userFactor;
+        const w3 = adjustedweights.activity
+        const bias = 1.0;
+        let rawXP = (w1*level) + (w2* 1/msgFreq) + (w3*activeUsers) + bias;
+        return Math.floor(Math.max(rawXP, 100));
     } // Xp required for the next level.
 
     getAllUsers() {
