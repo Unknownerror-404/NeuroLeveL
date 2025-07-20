@@ -24,6 +24,6 @@ Perfect for Discord communities that want:
 ### Updates underway!! Working on v 1.01
 __To do__:
 - ✅ Make the code more dynamic to mirror updating weights in a perceptron.
-- Making xp required for succeeding levels follow similar perceptronic logic.
+- 🚧 Making xp required for succeeding levels follow similar perceptronic logic.
 - Pull out the ports for tuning weights and biases to the discord chat region itself, rather than implicit tuning in the handler code.
 ---
