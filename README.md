@@ -21,9 +21,9 @@ Perfect for Discord communities that want:
 - Anti-spam leveling
 - Smarter reward logic based on real interaction
 
-### Updates underway!! Working on v 1.01
+### Updates for 1.01.00 have been added! SUpporting the following processes!
 __To do__:
 - ✅ Make the code more dynamic to mirror updating weights in a perceptron.
-- 🚧 Making xp required for succeeding levels follow similar perceptronic logic.
-- Pull out the ports for tuning weights and biases to the discord chat region itself, rather than implicit tuning in the handler code.
+- ✅ Making xp required for succeeding levels follow similar perceptronic logic.
+- ✅ Pull out the ports for tuning weights and biases to the discord chat region itself, rather than implicit tuning in the handler code.
 ---
