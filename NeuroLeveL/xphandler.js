@@ -1,4 +1,5 @@
 require('dotenv').config();
+require('ports.js')
 const UserXP = require('./Xpdistribution.js'); // Importing the UserXP model.
 
 const messages = new Map(); 
@@ -31,9 +32,9 @@ class XPHandler {
     }
 
     async getUser(userId, guildId) { 
-        const cacheKey = `${guildId}:${userId}`;
+        const cacheKey = `${guildId}:${userId}`; 
         if (xpDatabase.has(cacheKey)) return xpDatabase.get(cacheKey);
-
+ 
         let user = await UserXP.findOne({ userId, guildId });
         if(!user) {
             user = new UserXP({ userId, guildId });
@@ -77,13 +78,18 @@ class XPHandler {
         return Math.floor(Math.pow(xp / 100, 1 / this.scaling));
     } // Extract levels from XP.
 
-    getXPForNextLevel(level, adjustedweights, msgFreq, activeUsers, gainMultiplier) {
-        const w1 = gainMultiplier;
-        const w2 = adjustedweights.userFactor;
-        const w3 = adjustedweights.activity
+    getXPForNextLevel(level, msgCount, userMsgRatio) {
+        // Dynamic scaling: base required XP on level, scaling, and user activity
+        const normalizeActivity = 1 / (msgCount + 1);
+        const normalizeUserRatio = userMsgRatio;
         const bias = 1.0;
-        let rawXP = (w1*level) + (w2* 1/msgFreq) + (w3*activeUsers) + bias;
-        return Math.floor(Math.max(rawXP, 100));
+        this.perceptronWeightdummy = this.update_weights(this.perceptronWeight, msgCount, userMsgRatio);
+        const gainMultiplier = (
+            (normalizeActivity * this.perceptronWeightdummy.activity + normalizeUserRatio * this.perceptronWeightdummy.userFactor) + bias
+        );
+        const activation = Math.max(3, gainMultiplier);
+        // XP required for next level now scales with activity and user ratio
+        return Math.floor(100 * Math.pow(level + 1, this.scaling) * activation);
     } // Xp required for the next level.
 
     getAllUsers() {
