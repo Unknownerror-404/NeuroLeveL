@@ -21,7 +21,7 @@ Perfect for Discord communities that want:
 - Anti-spam leveling
 - Smarter reward logic based on real interaction
 
-### Updates for 1.01.00 have been added! SUpporting the following processes!
+### Updates for 1.01.00 have been added! Supporting the following processes!
 __To do__:
 - ✅ Make the code more dynamic to mirror updating weights in a perceptron.
 - ✅ Making xp required for succeeding levels follow similar perceptronic logic.
