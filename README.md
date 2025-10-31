@@ -27,3 +27,10 @@ __Features Added__:
 - ✅ Making xp required for succeeding levels follow similar perceptronic logic.
 - ✅ Pull out the ports for tuning weights and biases to the discord chat region itself, rather than implicit tuning in the handler code.
 ---
+
+### Updates for 1.02 are underway!
+__Features to be added__:
+- Adding contextual processing to the messages sent in discord channels.
+- Adding relative scoring, hence any message improving user interactions by being supportive, communicative should lead to higher xp gains.
+- Adding a message mood decider which decides current channel mood to be utilized for varying bot events (under work!).
+- Adding latency to check involvement in terms of activity or interest.
