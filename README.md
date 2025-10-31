@@ -34,3 +34,4 @@ __Features to be added__:
 - Adding relative scoring, hence any message improving user interactions by being supportive, communicative should lead to higher xp gains.
 - Adding a message mood decider which decides current channel mood to be utilized for varying bot events (under work!).
 - Adding latency to check involvement in terms of activity or interest.
+---
