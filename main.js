@@ -13,7 +13,6 @@ const client = new Client({
         GatewayIntentBits.GuildMessageReactions,
     ]
 });
-
 const mongoose = require('mongoose');
 const calc = require('./NeuroLeveL/XP_calc.js');
 const { XP } = require('./NeuroLeveL/xphandler.js');

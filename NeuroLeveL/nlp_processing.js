@@ -1,13 +1,20 @@
 import Sentiment from "sentiment";
 import natural from "natural";
-import { globalmsg, messages  } from "../xp_handler/xp";
 
-const gbmsg = globalmsg;
-const msg = messages;
+"const { Client, GatewayIntentBits, Collection } = require('discord.js');"
+const { ChatInstances } = require("./Chat_selection.js");
+const Chat_storage_with_all_info = {};
+const User_Id_with_messages = {};
+
+for (const [UserIds, Chatdata] of ChatInstances.entries()) 
+{
+Chat_storage_with_all_info[UserIds] = Chatdata;
+}
+
 const sentiment = new Sentiment();
 const tokenizer = new natural.WordTokenizer();
 
-export function extractNLPFeatures(message) {
+function extractNLPFeatures(message) {
   const tokens = tokenizer.tokenize(message);
   const sentimentResult = sentiment.analyze(message);
 
@@ -34,7 +41,6 @@ if (!msg || !msg.content) return [];
 let begin = await count(msg);
 if (begin === false) return [];
 if (gbmsg.count !== 0){
-
 }
 else {
   let message_Content = Array.from(msg.values());
@@ -53,8 +59,6 @@ else {
 
       }
     }
-  let message_uId = Array.from(msg.keys());
-  
 }
 }
 
