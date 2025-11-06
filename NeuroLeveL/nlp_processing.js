@@ -1,13 +1,20 @@
 import Sentiment from "sentiment";
 import natural from "natural";
-import { globalmsg, messages,  } from "../xp_handler/xp";
 
-const gbmsg = globalmsg;
-const msg = messages;
+"const { Client, GatewayIntentBits, Collection } = require('discord.js');"
+const { ChatInstances } = require("./Chat_selection.js");
+const Chat_storage_with_all_info = {};
+const User_Id_with_messages = {};
+
+for (const [UserIds, Chatdata] of ChatInstances.entries()) 
+{
+Chat_storage_with_all_info[UserIds] = Chatdata;
+}
+
 const sentiment = new Sentiment();
 const tokenizer = new natural.WordTokenizer();
 
-export function extractNLPFeatures(message) {
+function extractNLPFeatures(message) {
   const tokens = tokenizer.tokenize(message);
   const sentimentResult = sentiment.analyze(message);
 
@@ -24,12 +31,35 @@ export function extractNLPFeatures(message) {
 
 async function count(msg){
 if (msg.author.bot || !msg.guild) return false;
-
+else if(msg.length === 0) return false;
+else if (msg.length > 0) return true;
 }
 
 async function preprocessing(msg){
+  let turn = 0;
 if (!msg || !msg.content) return [];
-let begin = await count(msg)
+let begin = await count(msg);
+if (begin === false) return [];
+if (gbmsg.count !== 0){
+}
+else {
+  let message_Content = Array.from(msg.values());
+  let text = message_Content;
+    for (let i = 0; i < message_Content.length; i++){
+      if (text.at(-1) !== message_Content[i]){
+        continue;
+      }
+      else if (text.at(-1) === message_Content[i]){
+      text.splice(0, text.length -1);
+      j=i;
+      while (j < message_Content.length - 1){
+      text += message_Content[j+1];
+      j++;
+      }
+
+      }
+    }
+}
 }
 
 async function get_mood(message = ''){
@@ -45,7 +75,7 @@ async function current_mood_score(msg){
     let messg = await preprocessing(msg); //preprocessing going off means a new message was added, which we need to consider. SO msg is now a single message array handled by preprocessing so we use at(-1)
     if (messg.length === 0) return 0;
     let current_mood_score = 0;
-    const recent_Message = messg.at(-1);
+    const recent_Message = messg.at(-1) ;
     current_mood_score += get_mood(recent_Message);
     return current_mood_score / messagesArray.length;
 }
