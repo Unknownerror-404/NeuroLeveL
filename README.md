@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./NeuroLeveL/assets/Logo.png" width="300" alt="NeuroLeveL Logo" />
+  <img src="./NeuroLeveL/assets/Jason-1.png" width="300" alt="NeuroLeveL Logo" />
 </p>
 
 # NeuroLeveL
